@@ -43,7 +43,10 @@
         useGrouping: true
       }) }}</span>
     </div>
-    <button @click="showModal = false" style="background-color: purple; border: 0; cursor: pointer; border-radius: 15px; height: 45px; color: white; width: 85px; font-size: large;">Cerrar</button>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <button @click="vaciarCarrito()" style="background-color: purple; border: 0; cursor: pointer; border-radius: 15px; height: 45px; color: white; width: 125px; font-size: large;">Vaciar carrito</button>
+      <button @click="showModal = false" style="background-color: purple; border: 0; cursor: pointer; border-radius: 15px; height: 45px; color: white; width: 85px; font-size: large;">Cerrar</button>
+    </div>
   </div>
   </div>
 </div>
@@ -223,6 +226,10 @@ const calcularTotal = () => {
 
 function eliminarCarrito (i){
   carrito.value.splice(i,1)
+}
+
+function vaciarCarrito (){
+  carrito.value = []
 }
 
 </script>
